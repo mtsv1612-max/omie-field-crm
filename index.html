@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#163b6d">
+<meta name="theme-color" content="#123a6f">
 <title>Omie Field CRM</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg">
@@ -57,7 +57,7 @@ function render(){const app=document.querySelector('#app');app.innerHTML=state.u
 document.addEventListener('click',(event)=>{const target=event.target.closest('button');if(!target)return;if(target.dataset.login)login(target.dataset.login);if(target.dataset.tab)setTab(target.dataset.tab);if(target.dataset.opp)selectOpportunity(target.dataset.opp);if(target.dataset.action==='logout')logout();if(target.dataset.action==='sync')fakeSync()});
 document.addEventListener('submit',(event)=>{const form=event.target;if(form.dataset.form==='update')updateOpportunity(event);if(form.dataset.form==='visit')addVisitNote(event);if(form.dataset.form==='request')addBackofficeRequest(event)});
 document.addEventListener('input',(event)=>{if(!event.target.matches('[data-search], [data-filter]'))return;const search=document.querySelector('[data-search]')?.value.toLowerCase()||'';const temp=document.querySelector('[data-filter]')?.value||'';const list=state.opportunities.filter((opp)=>opp.customer.toLowerCase().includes(search)&&(!temp||opp.temperature===temp));document.querySelector('#opportunity-list').innerHTML=list.length?opportunityList(list):'<p class="empty">Nenhuma oportunidade encontrada.</p>'});
-if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'))}
 render();
 </script>
 </body>
