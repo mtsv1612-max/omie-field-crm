@@ -5,7 +5,7 @@
   "scope": "/omie-field-crm/",
   "display": "standalone",
   "background_color": "#f4f7fb",
-  "theme_color": "#163b6d",
+  "theme_color": "#123a6f",
   "icons": [
     {
       "src": "icon.svg",
